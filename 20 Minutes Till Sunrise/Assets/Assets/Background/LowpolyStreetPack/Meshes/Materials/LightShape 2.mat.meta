@@ -1,9 +1,5 @@
 fileFormatVersion: 2
-guid: 02f2992f835e75d4e9a772f9c306afef
-labels:
-- tile
-- set
-- park
+guid: 6a875b435a22941f3a84cc8067eb34c5
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
