@@ -19,7 +19,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &5588358636571466301
 Transform:
@@ -127,5 +127,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c04d051c138604010bdb935534d0c697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
-  maxDistance: 0
+  speed: 40
+  maxDistance: 4
