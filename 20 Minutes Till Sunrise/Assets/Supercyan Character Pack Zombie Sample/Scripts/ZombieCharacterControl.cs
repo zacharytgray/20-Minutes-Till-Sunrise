@@ -34,7 +34,8 @@ public class ZombieCharacterControl : MonoBehaviour
         transform.position += transform.forward * m_moveSpeed * Time.deltaTime;
     }
 }
-
+ 
+    
 
     
     
