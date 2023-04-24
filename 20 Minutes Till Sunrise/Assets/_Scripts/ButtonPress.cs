@@ -15,7 +15,7 @@ public class ButtonPress : MonoBehaviour
      void Start(){
         GameObject HSDisplay = GameObject.Find("StartCanvas");
         GlobalValues.GlobalVarsInstance = HSDisplay.GetComponent<GlobalValues>();
-        Debug.Log(GlobalValues.GlobalVarsInstance.nextHS);
+        // Debug.Log(GlobalValues.GlobalVarsInstance.nextHS);
 
         
     }
