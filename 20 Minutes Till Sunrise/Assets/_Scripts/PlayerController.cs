@@ -16,11 +16,22 @@ public class PlayerController : MonoBehaviour
     public int playerHealth = 3;
     public bool isAlive = true;
 
+    public bool isInvincible = false;
+
+    public float yValue;
     void Start() {
         PlayerPrefs.SetFloat("Lives", 3);
+        isInvincible = false;
     }
 
     void Update() {
+        if (this.transform.position.y > 0.01 || this.transform.position.y < -0.01)
+        {
+            Vector3 pos = this.transform.position;
+           pos.y = 0;
+           this.transform.position = pos;
+        }
+        yValue = this.transform.position.y;
         if (isAlive && this.gameObject != null) {
             Plane playerPlane = new Plane(Vector3.up, transform.position);
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -62,6 +73,7 @@ public class PlayerController : MonoBehaviour
 
 
         if (playerHealth <= 0) {
+            TMTS.playerDead();
             Destroy(this.gameObject);
 
         }
@@ -78,8 +90,24 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision col) {
         if (col.gameObject.name == "Zombie" || col.gameObject.name == "Zombie(Clone)") {
-            playerHealth--;
+            if (!isInvincible)
+            {
+                playerHit();
+                playerHealth--;
+
+            }
         }
+    }
+
+    void playerHit()
+    {
+        isInvincible = true;
+        Invoke("endIFrames", 1);
+    }
+
+    void endIFrames()
+    {
+        isInvincible = false;
     }
     
 }
