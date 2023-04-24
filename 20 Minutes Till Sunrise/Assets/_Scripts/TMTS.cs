@@ -10,6 +10,7 @@ public class TMTS : MonoBehaviour
     public PlayerController player;
     public string finalTime = "0:00";
 
+
     void Start()
     {
         //Instantiate fields that need instantiating
@@ -18,7 +19,6 @@ public class TMTS : MonoBehaviour
 
     void Update()
     {
-
     }
 
     //player calls playerDead on this when health = 0
@@ -32,4 +32,5 @@ public class TMTS : MonoBehaviour
     {
         //load end scene
     }
+
 }

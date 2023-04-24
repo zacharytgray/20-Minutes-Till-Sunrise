@@ -98,4 +98,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombiePrefab: {fileID: 0}
   spawnInterval: 2
-  maxZombiesPerWave: 3
+  maxZombiesPerWave: 2
