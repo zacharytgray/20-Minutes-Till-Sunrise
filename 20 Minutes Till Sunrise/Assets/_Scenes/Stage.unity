@@ -2090,7 +2090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timer: {fileID: 1811090537}
   player: {fileID: 2101444630}
-  finalTime: 0:00
+  finalScore: 0
 --- !u!1001 &981595546
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3562,8 +3562,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 70, y: -10}
-  m_SizeDelta: {x: 161, y: 30}
+  m_AnchoredPosition: {x: 70, y: -40}
+  m_SizeDelta: {x: 161, y: 80}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1811090537
 MonoBehaviour:
@@ -3600,11 +3600,11 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
-    m_FontStyle: 1
+    m_FontSize: 60
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 60
     m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -3947,8 +3947,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -820, y: -10}
-  m_SizeDelta: {x: 161, y: 30}
+  m_AnchoredPosition: {x: -650, y: -40}
+  m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1974161870
 MonoBehaviour:
@@ -3972,8 +3972,8 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 26
-    m_FontStyle: 1
+    m_FontSize: 60
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 113
@@ -3983,9 +3983,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Lives: 3
-
-'
+  m_Text: 'Lives: 3'
 --- !u!222 &1974161871
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4322,6 +4320,7 @@ MonoBehaviour:
   bulletSpawnPoint: {fileID: 1877995457}
   playerHealth: 3
   isAlive: 1
+  isInvincible: 0
 --- !u!136 &2101444631
 CapsuleCollider:
   m_ObjectHideFlags: 0

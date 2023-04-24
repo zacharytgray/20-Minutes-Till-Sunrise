@@ -16,11 +16,13 @@ public class GlobalGameOver : MonoBehaviour
 
     public void Start(){
         updateScoreText(ScoreTracker.ScoreTrackerInstance.score);
+      
         Debug.Log(ScoreTracker.ScoreTrackerInstance.score + "Start");
     }
 
     public void updateScoreText(int score){
         GameOverScore.text = "Your Final Score Was: " + score.ToString("#,0");
+        
     }
 
 }

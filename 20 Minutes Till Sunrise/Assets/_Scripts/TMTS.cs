@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class TMTS : MonoBehaviour
 {
@@ -31,12 +32,13 @@ public class TMTS : MonoBehaviour
     public static void playerDead()
     {
         S.finalScore = S.getCurrentScore();
-        S.Invoke("gameOver", 5.0f);
+        S.Invoke("gameOver", 3.0f);
     }
 
     void gameOver()
     {
         ScoreTracker.ScoreTrackerInstance.score = finalScore;
+        GlobalValues.GlobalVarsInstance.updateHighScore(finalScore, false);
         ScenesManager.LoadGameOver();
     }
 

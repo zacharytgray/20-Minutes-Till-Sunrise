@@ -27,7 +27,7 @@ public class Timer : MonoBehaviour
         currentTime = watch.Elapsed.ToString(@"m\:ss");
         uiText.text = currentTime;
         TimeSpan ts = TimeSpan.Parse(currentTime);
-        totalSeconds = (int)ts.TotalSeconds;
+        totalSeconds = (int)ts.TotalSeconds/60;
     }
 
     public void Restart()
