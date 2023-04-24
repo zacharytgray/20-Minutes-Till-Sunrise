@@ -27,7 +27,6 @@ public class ButtonPress : MonoBehaviour
 
     public void InstructButtonPress(){
         Debug.Log("Instructions Open");
-        
         ScenesManager.LoadInstruct();
     }
 
@@ -61,6 +60,10 @@ public class ButtonPress : MonoBehaviour
     public void increaseScoreBy1(){
         ScoreTracker.ScoreTrackerInstance.increaseScoreBy(1);
         Debug.Log(ScoreTracker.ScoreTrackerInstance.score + "Press");
+    }
+
+    public void exitInstructions(){
+        ScenesManager.LoadTitle();
     }
     
 
