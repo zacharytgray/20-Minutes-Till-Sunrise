@@ -16,7 +16,7 @@ public class Cam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.isAlive) {
+        if (player) {
             Vector3 pos = new Vector3();
             pos.x = playerTransform.position.x;
             pos.z = playerTransform.position.z;

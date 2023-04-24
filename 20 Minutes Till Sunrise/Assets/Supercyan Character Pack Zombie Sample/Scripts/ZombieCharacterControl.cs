@@ -39,7 +39,7 @@ public class ZombieCharacterControl : MonoBehaviour
         }
 
         if (health <= 0) {
-            Destroy(zombie.gameObject);
+            Destroy(this.gameObject);
         }
         
     }

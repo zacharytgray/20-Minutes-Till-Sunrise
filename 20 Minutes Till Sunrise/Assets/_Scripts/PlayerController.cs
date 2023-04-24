@@ -16,6 +16,10 @@ public class PlayerController : MonoBehaviour
     public int playerHealth = 3;
     public bool isAlive = true;
 
+    void Start() {
+        PlayerPrefs.SetFloat("Lives", 3);
+    }
+
     void Update() {
         if (isAlive && this.gameObject != null) {
             Plane playerPlane = new Plane(Vector3.up, transform.position);
@@ -59,8 +63,11 @@ public class PlayerController : MonoBehaviour
 
         if (playerHealth <= 0) {
             Destroy(this.gameObject);
-            isAlive = false;
+
         }
+        PlayerPrefs.SetInt("Lives",  playerHealth);
+
+
 
     }
 
@@ -70,7 +77,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision col) {
-        if (col.gameObject.name == "Zombie") {
+        if (col.gameObject.name == "Zombie" || col.gameObject.name == "Zombie(Clone)") {
             playerHealth--;
         }
     }
