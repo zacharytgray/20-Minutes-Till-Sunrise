@@ -5,14 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class TMTS : MonoBehaviour
 {
-
+    private static TMTS S;
     public Timer timer;
     public PlayerController player;
-    public string finalTime = "0:00";
+    public int finalScore = 0;
 
 
     void Start()
     {
+        S = this;
         //Instantiate fields that need instantiating
     }
 
@@ -21,16 +22,22 @@ public class TMTS : MonoBehaviour
     {
     }
 
-    //player calls playerDead on this when health = 0
-    void playerDead()
+    int getCurrentScore()
     {
-        finalTime = timer.getCurrentTime();
-        Invoke("gameOver", 5.0f);
+        return timer.getCurrentScore();
+    }
+
+    //player calls playerDead on this when health = 0
+    public static void playerDead()
+    {
+        S.finalScore = S.getCurrentScore();
+        S.Invoke("gameOver", 5.0f);
     }
 
     void gameOver()
     {
-        //load end scene
+        ScoreTracker.ScoreTrackerInstance.score = finalScore;
+        ScenesManager.LoadGameOver();
     }
 
 }

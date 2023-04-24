@@ -16,8 +16,11 @@ public class PlayerController : MonoBehaviour
     public int playerHealth = 3;
     public bool isAlive = true;
 
+    public bool isInvincible = false;
+
     void Start() {
         PlayerPrefs.SetFloat("Lives", 3);
+        isInvincible = false;
     }
 
     void Update() {
@@ -62,6 +65,7 @@ public class PlayerController : MonoBehaviour
 
 
         if (playerHealth <= 0) {
+            TMTS.playerDead();
             Destroy(this.gameObject);
 
         }
@@ -78,8 +82,24 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter(Collision col) {
         if (col.gameObject.name == "Zombie" || col.gameObject.name == "Zombie(Clone)") {
-            playerHealth--;
+            if (!isInvincible)
+            {
+                playerHit();
+                playerHealth--;
+
+            }
         }
+    }
+
+    void playerHit()
+    {
+        isInvincible = true;
+        Invoke("endIFrames", 1);
+    }
+
+    void endIFrames()
+    {
+        isInvincible = false;
     }
     
 }
