@@ -52,9 +52,9 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        bool getIsAlive() {
-            return isAlive;
-        }
+        // bool getIsAlive() {
+        //     return isAlive;
+        // }
 
 
         if (playerHealth <= 0) {
