@@ -18,12 +18,20 @@ public class PlayerController : MonoBehaviour
 
     public bool isInvincible = false;
 
+    public float yValue;
     void Start() {
         PlayerPrefs.SetFloat("Lives", 3);
         isInvincible = false;
     }
 
     void Update() {
+        if (this.transform.position.y > 0.01 || this.transform.position.y < -0.01)
+        {
+            Vector3 pos = this.transform.position;
+           pos.y = 0;
+           this.transform.position = pos;
+        }
+        yValue = this.transform.position.y;
         if (isAlive && this.gameObject != null) {
             Plane playerPlane = new Plane(Vector3.up, transform.position);
             Ray ray = UnityEngine.Camera.main.ScreenPointToRay(Input.mousePosition);
